@@ -47,7 +47,7 @@ function pdfpreview_field_formatter_info() {
  * Implements hook_field_formatter_info_alter().
  */
 function pdfpreview_field_formatter_info_alter(&$info) {
-  if (!empty($info['image']['settings'])) {
+  if (!empty($info['image']['settings']) && !empty($info['pdfpreview']['settings'])) {
     $info['pdfpreview']['settings'] += $info['image']['settings'];
   }
   if (isset($info['picture'])) {
